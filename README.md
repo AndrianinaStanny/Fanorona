@@ -1,11 +1,2 @@
-# React Native Learning
-
-Ce repository est dédié à mon apprentissage de **React Native**.
-
-Il contient :
-- des tests
-- des exemples
-- des exercices
-- des expérimentations
-
- Objectif : comprendre les bases et progresser étape par étape.
+Fanorona est un jeu de stratégie combinatoire abstrait traditionnel de Madagascar, vieux de plusieurs siècles, souvent qualifié d'échecs malgaches. Il se joue à deux avec 22 pions chacun sur un plateau de
+lignes. Le but est de capturer tous les pions de l'adversaire par percussion ou aspiration. 
