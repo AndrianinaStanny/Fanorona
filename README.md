@@ -15,7 +15,7 @@ Ce projet consiste en une implémentation mobile moderne du jeu, développée av
 * Permettre de jouer avec un bot avec 3 difficulté (easy-normal-hard)
   
 
-## 📦 Installation
+##  Installation
 
 ```bash
 git clone https://github.com/ton-username/fanorona-app.git
