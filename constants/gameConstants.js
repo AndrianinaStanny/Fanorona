@@ -1,8 +1,8 @@
 export const ROWS = 5;
 export const COLS = 9;
 
-export const PLAYER_W = 'W'; // Human (or Player 1)
-export const PLAYER_B = 'B'; // AI or Player 2
+export const PLAYER_W = 'W';
+export const PLAYER_B = 'B';
 export const EMPTY = null;
 
 export const GAME_MODES = {
@@ -17,27 +17,32 @@ export const AI_DIFFICULTY = {
 };
 
 /**
- * Initial board:
- *   Row 0: W W W W W W W W W
- *   Row 1: W W W W W W W W W
- *   Row 2: W W W W _ B B B B
- *   Row 3: B B B B B B B B B
- *   Row 4: B B B B B B B B B
+ * Disposition  :
+ *
+ *   Row 0: B B B B B B B B B
+ *   Row 1: B B B B B B B B B
+ *   Row 2: B W B W _ B W B W  
+ *   Row 3: W W W W W W W W W
+ *   Row 4: W W W W W W W W W
+ *
+ * Col :    0 1 2 3 4 5 6 7 8
  */
+
+// Rangée du milieu préconfigurée explicitement
+const MIDDLE_ROW = ['B','W','B','W', null, 'B','W','B','W'];
+
 export function INITIAL_BOARD() {
   const board = [];
   for (let r = 0; r < ROWS; r++) {
     board[r] = [];
     for (let c = 0; c < COLS; c++) {
       if (r < 2) {
-        board[r][c] = PLAYER_W;
-      } else if (r > 2) {
         board[r][c] = PLAYER_B;
+      } else if (r > 2) {
+        board[r][c] = PLAYER_W;
       } else {
-        // row 2
-        if (c < 4) board[r][c] = PLAYER_W;
-        else if (c === 4) board[r][c] = EMPTY;
-        else board[r][c] = PLAYER_B;
+        // Row 2 — alternance exacte
+        board[r][c] = MIDDLE_ROW[c];
       }
     }
   }
